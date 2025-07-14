@@ -1,0 +1,88 @@
+.startBg {
+    background-image: url('startBg.png');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+}
+
+.datetime {
+    padding-left: 73px;
+    padding-top: 63px;
+    padding-bottom: 286px;
+}
+
+.dateMessage {
+    margin: auto 0;
+    color: white;
+    font-size: 24px;
+}
+
+.timeMessage {
+    margin: auto 0;
+    color: white;
+    font-size: 24px;
+}
+
+.dateValue {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.timeValue {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+
+.welcomeMessage {
+    text-align: center
+}
+
+.welcomeMessageEn {
+    margin: auto 0;
+    color: white;
+    font-size: 75px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin-bottom: 63px;
+}
+
+.welcomeMessageKo {
+    margin: auto 0;
+    color: white;
+    font-size: 45px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    padding-bottom: 346px;
+}
+
+.click {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.clickIcon {
+    background-image: url('clickIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 53px;
+    width: 145px;
+    height: 184px;
+}
+
+.clickText {
+    margin: auto 0;
+    text-align: center;
+    justify-content: center;
+    color: #DAFFD2;
+    font-size: 30px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin-bottom: 13px;
+}
