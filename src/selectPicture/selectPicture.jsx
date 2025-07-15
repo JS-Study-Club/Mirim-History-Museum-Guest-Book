@@ -18,7 +18,7 @@ const SelectPicture = () => {
     };
 
     const handleSave = () => {
-        navigate('/selectPicture', { state: { image } });
+        navigate('/draw', { state: { image } });
     };
 
     return (
