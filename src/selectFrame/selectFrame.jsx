@@ -1,9 +1,9 @@
-import './design.css';
+import './selectFrame.css';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StepIndicator from '../stepIndicator/StepIndicator';
 
-const Design = () => {
+const selectFrame = () => {
 
     const navigate = useNavigate();
 
@@ -57,4 +57,4 @@ return (
     </div>
 );
 }
-export default Design ;
+export default selectFrame ;

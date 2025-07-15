@@ -6,7 +6,7 @@ const Start = () => {
 
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/design');
+        navigate('/selectFrame');
     };
 
     const today = new Date();

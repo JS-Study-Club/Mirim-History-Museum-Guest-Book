@@ -10,7 +10,7 @@ const SelectPicture = () => {
     const image = location.state?.image;
 
     const handleBack = () => {
-        navigate('/design');
+        navigate('/selectFrame');
     };
 
     const handleRetake = () => {
