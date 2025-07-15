@@ -38,7 +38,6 @@
     background-color: #D9D9D9;
     margin-bottom: 100px;
 }
-
 .frames {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,12 +49,63 @@
   padding: 30px;
 }
 
-.frame1, .frame2, .frame3, .frame3, .frame4, .frame5, .frame6{
-    width: 303px;
-    height: 181px;
-    background-color: #EEE;
-    border-radius: 10px;
-    border: #CCC 2px;
+.frames > div {
+  width: 303px;
+  height: 181px;
+  background-color: #EEE;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.selected {
+    border: 3px solid #008156 !important;
+    opacity: 1;
+}
+
+.unselected {
+    border: 2px solid #CCC;
+    opacity: 0.5;
+}
+
+.thumnail1 {
+  background-image: url('/thumnail1.png');
+}
+.thumnail2 {
+  background-image: url('/thumnail2.png');
+}
+.thumnail3 {
+  background-image: url('/thumnail3.png');
+}
+.thumnail4 {
+  background-image: url('/thumnail4.png');
+}
+.thumnail5 {
+  background-image: url('/thumnail5.png');
+}
+.thumnail6 {
+  background-image: url('/thumnail6.png');
+}
+
+.frame1 {
+  background-image: url('/frame1.png');
+}
+.frame2 {
+  background-image: url('/frame2.png');
+}
+.frame3 {
+  background-image: url('/frame3.png');
+}
+.frame4 {
+  background-image: url('/frame4.png');
+}
+.frame5 {
+  background-image: url('/frame5.png');
+}
+.frame6 {
+  background-image: url('/frame6.png');
 }
 
 .nextbutton {
@@ -67,6 +117,12 @@
     font-size: 36px;
     font-family: 'Poppins';
     font-weight: 600;
+}
+
+.nextbutton:disabled {
+  background-color: #D9D9D9;
+  color: white;
+  cursor: not-allowed;
 }
 
 .after15 {
