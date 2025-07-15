@@ -6,7 +6,10 @@ import StepIndicator from '../stepIndicator/StepIndicator';
 const Design = () => {
 
     const navigate = useNavigate();
-    
+    const handleClick = () => {
+        navigate('/picture');
+    };
+
     const [countdown, setCountdown] = useState(15); 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -38,7 +41,7 @@ return (
             <div className='frame5'></div>
             <div className='frame6'></div>
         </div>
-        <button className='nextbutton'>다음</button>
+        <button className='nextbutton' onClick={handleClick}>다음</button>
         <p className='after15'>{countdown}초 뒤 메인화면으로 이동합니다</p>
         <StepIndicator currentStep={1} />
 
