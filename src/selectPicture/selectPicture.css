@@ -1,3 +1,14 @@
+.back-button {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    stroke-width: 2px;
+    margin-left: 50px;
+    color: #555;
+}
+
 .preview-image {
     margin-bottom: 87px;
 }
