@@ -1,11 +1,12 @@
 import './start.css';
-import {useState} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const Start = () => {
 
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/next'); // 이동할 경로
+        navigate('/design');
     };
 
     const today = new Date();
@@ -17,6 +18,17 @@ const Start = () => {
     const hours12 = String(hours24 % 12 || 12).padStart(2, "0");
     const ampm = hours24 < 12 ? "AM" : "PM";
     const formattedTime = `${hours12}:${minutes} ${ampm}`;
+
+    const colors = ['rgba(218, 255, 210, 0.8)', 'rgba(218, 255, 210, 0.3)'];
+    const [colorIndex, setColorIndex] = useState(0);
+
+    useEffect(() => {
+    const intervalId = setInterval(() => {
+      setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
 return (
     <div className='startBg' onClick={handleClick}>
@@ -37,7 +49,7 @@ return (
         </div>
         <div className='click'>
             <div className='clickIcon'></div>
-            <p className='clickText'>Click</p>
+            <p className='clickText' style={{ color: colors[colorIndex] }}>Click</p>
             <p className='clickText'>화면을 터치하여 방문록 작성하기</p>
         </div>
         
