@@ -6,8 +6,11 @@ import StepIndicator from '../stepIndicator/StepIndicator';
 const Design = () => {
 
     const navigate = useNavigate();
+
     const handleClick = () => {
+      if (selected !== null) {
         navigate('/picture');
+      }
     };
 
     const [countdown, setCountdown] = useState(15); 
@@ -26,22 +29,28 @@ const Design = () => {
         };
       }, [navigate]);
 
+      const [selected, setSelected] = useState(null);
+      
+
 return (
     <div className='container'>
          <div className="header">
             <p className="headerEn">Choose Frame</p>
             <p className="headerKo">프레임을 선택해주세요</p>
         </div>
-        <div className='frame'></div>
-        <div className='frames'>
-            <div className='frame1'></div>
-            <div className='frame2'></div>
-            <div className='frame3'></div>
-            <div className='frame4'></div>
-            <div className='frame5'></div>
-            <div className='frame6'></div>
+        <div className={`frame ${selected ? `frame${selected}` : ''}`}></div>
+        <div className="frames">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <div
+              key={num}
+              className={`frame${num} ${
+                selected === null ? '' : selected === num ? 'selected' : 'unselected'
+              }`}
+              onClick={() => setSelected(num)}
+            ></div>
+          ))}
         </div>
-        <button className='nextbutton' onClick={handleClick}>다음</button>
+        <button className='nextbutton' onClick={handleClick} disabled={selected === null}>다음</button>
         <p className='after15'>{countdown}초 뒤 메인화면으로 이동합니다</p>
         <StepIndicator currentStep={1} />
 
