@@ -1,4 +1,5 @@
 import './design.css';
+import StepIndicator from '../stepIndicator/StepIndicator';
 
 const Design = () => {
 
@@ -19,6 +20,8 @@ return (
         </div>
         <button className='nextbutton'>다음</button>
         <p className='after15'>15초 뒤 메인화면으로 이동합니다</p>
+        <StepIndicator currentStep={1} />
+
     </div>
 );
 }
