@@ -43,7 +43,7 @@ return (
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <div
               key={num}
-              className={`frame${num} ${
+              className={`thumnail${num} ${
                 selected === null ? '' : selected === num ? 'selected' : 'unselected'
               }`}
               onClick={() => setSelected(num)}
