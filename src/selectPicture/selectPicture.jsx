@@ -1,12 +1,17 @@
 import './selectPicture.css';
 import StepIndicator from '../stepIndicator/StepIndicator';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { IoChevronBackOutline } from 'react-icons/io5';
 
 const SelectPicture = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
     const image = location.state?.image;
+
+    const handleBack = () => {
+        navigate('/design');
+    };
 
     const handleRetake = () => {
         navigate('/picture');
@@ -19,6 +24,9 @@ const SelectPicture = () => {
     return (
         <div className='container'>
             <div className="header">
+                <button className="back-button" onClick={handleBack}>
+                    <IoChevronBackOutline size={64} />
+                </button>                
                 <p className="headerEn">Save Photo</p>
                 <p className="headerKo">사진을 저장하시겠습니까?</p>
             </div>
