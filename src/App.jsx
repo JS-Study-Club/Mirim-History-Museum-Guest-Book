@@ -3,6 +3,7 @@ import Start from './start/start'
 import SelectFrame from './selectFrame/selectFrame'
 import Picture from './picture/picture'
 import SelectPicture from './selectPicture/selectPicture';
+import Draw from './draw/draw';
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
         <Route path='/selectFrame' element={<SelectFrame />} />
         <Route path='/picture' element={<Picture />} />
         <Route path='/selectPicture' element={<SelectPicture />} />
+        <Route path='/draw' element={<Draw />} />
+
       </Routes>
     </Router>
   )
