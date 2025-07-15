@@ -19,7 +19,7 @@ const Picture = () => {
             const imageSrc = webcamRef.current.getScreenshot();
 
             setTimeout(() => {
-                navigate('/selectPicture');
+                navigate('/selectPicture', { state: { image: imageSrc } });
             }, 500);
         }
     }, [countdown, navigate]);
