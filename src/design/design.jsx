@@ -1,7 +1,27 @@
 import './design.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import StepIndicator from '../stepIndicator/StepIndicator';
 
 const Design = () => {
+
+    const navigate = useNavigate();
+    
+    const [countdown, setCountdown] = useState(15); 
+    useEffect(() => {
+        const timer = setInterval(() => {
+          setCountdown((prev) => prev - 1);
+        }, 1000);
+    
+        const timeout = setTimeout(() => {
+          navigate("/");
+        }, 15000);
+    
+        return () => {
+          clearInterval(timer);
+          clearTimeout(timeout);
+        };
+      }, [navigate]);
 
 return (
     <div className='container'>
@@ -19,7 +39,7 @@ return (
             <div className='frame6'></div>
         </div>
         <button className='nextbutton'>다음</button>
-        <p className='after15'>15초 뒤 메인화면으로 이동합니다</p>
+        <p className='after15'>{countdown}초 뒤 메인화면으로 이동합니다</p>
         <StepIndicator currentStep={1} />
 
     </div>
