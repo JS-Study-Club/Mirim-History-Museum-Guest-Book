@@ -1,38 +1,8 @@
 import './finish.css';
 import StepIndicator from '../stepIndicator/StepIndicator';
-import confetti from 'canvas-confetti';
-import { useEffect, useRef } from 'react';
 
 
 const Finish = () => {
-
-    const hasFired = useRef(false); // 중복 실행 방지
-
-    const checkRef = useRef();
-
-    useEffect(() => {
-    if (!hasFired.current) {
-        hasFired.current = true;
-
-        const rect = checkRef.current.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
-
-        const originX = x / window.innerWidth;
-        const originY = y / window.innerHeight;
-
-        confetti({
-        particleCount: 300,
-        angle: 90,
-        spread: 100,
-        startVelocity: 50,
-        origin: { x: originX, y: originY },
-        gravity: 1.0,
-        scalar: 1.8 // 입자 크기
-
-        });
-    }
-    }, []);
 
 
 
