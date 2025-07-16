@@ -1,0 +1,104 @@
+.preview-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.20), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 58px;
+}
+
+.preview-image {
+    max-width: 972px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.canvas-wrapper {
+    width: 972px;
+    height: 390px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 1rem 0;
+    margin-bottom: 205px;
+}
+
+.tool-button {
+    background: #F5F6F8;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    width: 118px;
+    height: 118px;
+    border: none;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.tool-button.active {
+    border: 3px solid #008156;
+    background-color: rgba(0, 129, 86, 0.05);
+}
+
+.tool-button .tool-icon {
+    transition: filter 0.2s ease;
+}
+
+.tool-button:not(.active) .tool-icon {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(95%) contrast(87%);
+}
+
+.tool-button.active .tool-icon {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.undo-button, .redo-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    opacity: 0.4;
+}
+
+.undo-button.active, .redo-button.active {
+    opacity: 1;
+}
+
+.undo-button:disabled, .redo-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.undo-button .tool-icon, .redo-button .tool-icon {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(95%) contrast(87%);
+    transition: filter 0.2s ease;
+}
+
+.undo-button.active .tool-icon, .redo-button.active .tool-icon {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+.done-button {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 36px;
+    font-weight: 500;
+    width: 971px;
+    height: 140px;
+    border-radius: 12px;
+    background: #008156;
+    margin-bottom: 111px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.done-button:hover {
+    background-color: #006644;
+}
