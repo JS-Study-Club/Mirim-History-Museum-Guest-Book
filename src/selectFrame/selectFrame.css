@@ -33,50 +33,51 @@
 }
 
 .frame-container {
-  position: relative;
-  width: 971px;
-  height: 486px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 100px;
+    position: relative;
+    width: 971px;
+    height: 486px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 100px;
 }
 
 .webcam {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .frame-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .frames {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  justify-items: center;
-  align-items: center;
-  margin-bottom: 100px;
-  gap: 30px;
-  padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 30px;
+    padding: 30px;
 }
 
 .frames > div {
-  width: 303px;
-  height: 181px;
-  background-color: #EEE;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  box-sizing: border-box;
+    position: relative;
+    width: 303px;
+    height: 181px;
+    background-color: #EEE;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .selected {
@@ -89,42 +90,49 @@
     opacity: 0.5;
 }
 
-.thumnail1 {
-  background-image: url('/thumnail1.png');
-}
-.thumnail2 {
-  background-image: url('/thumnail2.png');
-}
-.thumnail3 {
-  background-image: url('/thumnail3.png');
-}
-.thumnail4 {
-  background-image: url('/thumnail4.png');
-}
-.thumnail5 {
-  background-image: url('/thumnail5.png');
-}
-.thumnail6 {
-  background-image: url('/thumnail6.png');
+
+.no-frame-icon {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
-.frame1 {
-  background-image: url('/frame1.png');
+.thumnail2 {
+    background-image: url('/thumnail2.png');
 }
+.thumnail3 {
+    background-image: url('/thumnail3.png');
+}
+.thumnail4 {
+    background-image: url('/thumnail4.png');
+}
+.thumnail5 {
+    background-image: url('/thumnail5.png');
+}
+.thumnail6 {
+    background-image: url('/thumnail6.png');
+}
+
+
 .frame2 {
-  background-image: url('/frame2.png');
+    background-image: url('/frame2.png');
 }
 .frame3 {
-  background-image: url('/frame3.png');
+    background-image: url('/frame3.png');
 }
 .frame4 {
-  background-image: url('/frame4.png');
+    background-image: url('/frame4.png');
 }
 .frame5 {
-  background-image: url('/frame5.png');
+    background-image: url('/frame5.png');
 }
 .frame6 {
-  background-image: url('/frame6.png');
+    background-image: url('/frame6.png');
 }
 
 .nextbutton {
@@ -139,9 +147,9 @@
 }
 
 .nextbutton:disabled {
-  background-color: #D9D9D9;
-  color: white;
-  cursor: not-allowed;
+    background-color: #D9D9D9;
+    color: white;
+    cursor: not-allowed;
 }
 
 .after30 {
