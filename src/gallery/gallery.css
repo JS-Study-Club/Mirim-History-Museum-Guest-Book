@@ -1,0 +1,17 @@
+.g-header {
+    margin-top: 70px;
+}
+
+.header-line {
+    background: #008156;
+    width: 1762px;
+    height: 1px;
+}
+
+.header-text {
+    color: #008156;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 32px;
+    font-weight: 500;
+}

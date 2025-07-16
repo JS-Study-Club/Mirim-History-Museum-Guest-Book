@@ -5,6 +5,7 @@ import Picture from './picture/picture'
 import SelectPicture from './selectPicture/selectPicture';
 import Draw from './draw/draw';
 import Finish from './finish/finish';
+import Gallery from './gallery/gallery';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/selectPicture' element={<SelectPicture />} />
         <Route path='/draw' element={<Draw />} />
         <Route path='/finish' element={<Finish />} />
+        <Route path='/gallery' element={<Gallery />} />
 
       </Routes>
     </Router>
