@@ -62,8 +62,8 @@ const Draw = () => {
 
   const handleDoneClick = async () => {
     const dataUrl = await canvasRef.current?.exportImage('png');
-    console.log(dataUrl);
     // navigate('/complete', { state: { drawing: dataUrl } }); // 예시
+    navigate('/finish');
   };
 
   return (
