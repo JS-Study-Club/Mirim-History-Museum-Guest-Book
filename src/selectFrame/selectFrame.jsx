@@ -44,7 +44,7 @@ const SelectFrame = () => {
             videoConstraints={{ facingMode: "user" }}
             mirrored
           />
-          {selected && (
+          {selected !== 1 && selected !== null && (
             <img src={`/frame${selected}.png`} alt={`frame${selected}`} className="frame-overlay" />
           )}
         </div>
@@ -57,9 +57,14 @@ const SelectFrame = () => {
                 selected === null ? '' : selected === num ? 'selected' : 'unselected'
               }`}
               onClick={() => setSelected(num)}
-            ></div>
+            >
+              {num === 1 && (
+                <img src="/noIcon.png" alt="no frame" className="no-frame-icon" />
+              )}
+            </div>
           ))}
         </div>
+
 
         <button className='nextbutton' onClick={handleClick} disabled={selected === null}>
           다음
