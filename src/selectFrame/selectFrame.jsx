@@ -13,7 +13,7 @@ const selectFrame = () => {
       }
     };
 
-    const [countdown, setCountdown] = useState(15); 
+    const [countdown, setCountdown] = useState(30); 
     useEffect(() => {
         const timer = setInterval(() => {
           setCountdown((prev) => prev - 1);
@@ -21,7 +21,7 @@ const selectFrame = () => {
     
         const timeout = setTimeout(() => {
           navigate("/");
-        }, 15000);
+        }, 30000);
     
         return () => {
           clearInterval(timer);

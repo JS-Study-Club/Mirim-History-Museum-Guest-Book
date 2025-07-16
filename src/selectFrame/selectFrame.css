@@ -56,12 +56,12 @@
   border-radius: 10px;
   background-size: cover;
   background-position: center;
-  transition: all 0.3s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .selected {
-    border: 3px solid #008156 !important;
+    border: 3px solid #008156;
     opacity: 1;
 }
 
