@@ -4,6 +4,7 @@ import SelectFrame from './selectFrame/selectFrame'
 import Picture from './picture/picture'
 import SelectPicture from './selectPicture/selectPicture';
 import Draw from './draw/draw';
+import Finish from './finish/finish';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/picture' element={<Picture />} />
         <Route path='/selectPicture' element={<SelectPicture />} />
         <Route path='/draw' element={<Draw />} />
+        <Route path='/finish' element={<Finish />} />
 
       </Routes>
     </Router>

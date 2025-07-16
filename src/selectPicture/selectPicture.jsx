@@ -31,7 +31,7 @@ const SelectPicture = () => {
                 <p className="headerKo">사진을 저장하시겠습니까?</p>
             </div>
             {image ? (
-                <img src={image} alt="Captured" className="preview-image" />
+                <img src={image} alt="Captured" className="captured-image" />
             ) : (
                 <p>사진이 없습니다.</p>
             )}
