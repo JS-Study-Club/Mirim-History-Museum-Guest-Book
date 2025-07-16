@@ -69,9 +69,6 @@ const Draw = () => {
   return (
     <div className="container">
       <div className="header">
-        <button className="back-button" onClick={handleBack}>
-          <IoChevronBackOutline size={64} />
-        </button>
         <p className="headerEn">Visitor's book</p>
         <p className="headerKo">방문록을 작성해주세요</p>
       </div>

@@ -23,10 +23,7 @@ const SelectPicture = () => {
 
     return (
         <div className='container'>
-            <div className="header">
-                <button className="back-button" onClick={handleBack}>
-                    <IoChevronBackOutline size={64} />
-                </button>                
+            <div className="header">             
                 <p className="headerEn">Save Photo</p>
                 <p className="headerKo">사진을 저장하시겠습니까?</p>
             </div>
