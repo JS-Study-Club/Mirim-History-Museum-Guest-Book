@@ -44,10 +44,11 @@ const SelectFrame = () => {
             videoConstraints={{ facingMode: "user" }}
             mirrored
           />
-          {selected !== 1 && selected !== null && (
-            <img src={`/frame${selected}.png`} alt={`frame${selected}`} className="frame-overlay" />
+          {selected === 3 && (
+            <img src="/kimkb.png" alt="kimkb frame" className="frame-overlay" />
           )}
         </div>
+
 
         <div className="frames">
           {[1, 2, 3, 4, 5, 6].map((num) => (
