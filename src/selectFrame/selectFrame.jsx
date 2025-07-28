@@ -51,21 +51,25 @@ const SelectFrame = () => {
 
 
         <div className="frames">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <div
-              key={num}
-              className={`thumnail${num} ${
-                selected === null ? '' : selected === num ? 'selected' : 'unselected'
-              }`}
-              onClick={() => setSelected(num)}
-            >
-              {num === 1 && (
-                <img src="/noIcon.png" alt="no frame" className="no-frame-icon" />
-              )}
-            </div>
-          ))}
-        </div>
+          {[1, 2, 3, 4, 5, 6].map((num) => {
+            const isSelected = selected === num;
+            const isAnythingSelected = selected !== null;
 
+            return (
+              <div
+                key={num}
+                className={`thumbnail${num} ${
+                  isSelected ? 'selected' : isAnythingSelected ? 'unselected' : 'initial'
+                }`}
+                onClick={() => setSelected(num)}
+              >
+                {num === 1 && (
+                  <img src="/noIcon.png" alt="no frame" className="no-frame-icon" />
+                )}
+              </div>
+            );
+          })}
+        </div>
 
         <button className='nextbutton' onClick={handleClick} disabled={selected === null}>
           다음
