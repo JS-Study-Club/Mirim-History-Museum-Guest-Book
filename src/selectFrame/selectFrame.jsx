@@ -3,14 +3,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StepIndicator from '../stepIndicator/StepIndicator';
 import Webcam from "react-webcam";
+import { useAppContext } from '../contexts/AppContext.jsx';
 
 const SelectFrame = () => {
     const navigate = useNavigate();
+    const { setSelectedFrame } = useAppContext();
     const [selected, setSelected] = useState(null);
     const [countdown, setCountdown] = useState(30);
 
     const handleClick = () => {
       if (selected !== null) {
+        setSelectedFrame(selected);
         navigate('/picture');
       }
     };

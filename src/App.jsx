@@ -1,3 +1,4 @@
+import { AppProvider } from './contexts/AppContext.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Start from './start/start'
 import SelectFrame from './selectFrame/selectFrame'
@@ -10,7 +11,8 @@ import Gallery from './gallery/gallery';
 function App() {
 
   return (
-    <Router>
+    <AppProvider>
+      <Router>
       <Routes>
         <Route path='/' element={<Start />} />
         <Route path='/selectFrame' element={<SelectFrame />} />
@@ -19,9 +21,9 @@ function App() {
         <Route path='/draw' element={<Draw />} />
         <Route path='/finish' element={<Finish />} />
         <Route path='/gallery' element={<Gallery />} />
-
       </Routes>
     </Router>
+    </AppProvider>
   )
 }
 

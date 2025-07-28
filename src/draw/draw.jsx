@@ -4,10 +4,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import { useRef, useState } from 'react';
+import { useAppContext } from '../contexts/AppContext.jsx';
 
 const Draw = () => {
   const navigate = useNavigate();
   const handleBack = () => navigate('/selectPicture');
+  const { selectedFrame } = useAppContext();
 
   const location = useLocation();
   const image = location.state?.image;
@@ -18,6 +20,12 @@ const Draw = () => {
   const [canRedo, setCanRedo] = useState(false);
   const [strokeCount, setStrokeCount] = useState(0);
   const [undoCount, setUndoCount] = useState(0);
+
+  const getFrameImage = (frameNumber) => {
+    return `/frame${frameNumber}.png`;
+  };
+
+  const frameImageSrc = selectedFrame ? getFrameImage(selectedFrame) : null;
 
   const handleRedoClick = () => {
     if (canRedo) {
@@ -76,6 +84,13 @@ const Draw = () => {
       {image ? (
         <div className="preview-wrap">
           <img src={image} alt="Captured" className="preview-image" />
+          {frameImageSrc && (
+            <img 
+              src={frameImageSrc} 
+              alt={`frame ${selectedFrame}`} 
+              className="frame-overlay" 
+            />
+          )}
           <div className="canvas-wrapper">
             <ReactSketchCanvas
               ref={canvasRef}
