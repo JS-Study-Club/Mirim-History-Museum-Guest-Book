@@ -1,14 +1,12 @@
 import './draw.css';
 import StepIndicator from '../stepIndicator/StepIndicator';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { IoChevronBackOutline } from 'react-icons/io5';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import { useRef, useState } from 'react';
 import { useAppContext } from '../contexts/AppContext.jsx';
 
 const Draw = () => {
   const navigate = useNavigate();
-  const handleBack = () => navigate('/selectPicture');
   const { selectedFrame } = useAppContext();
 
   const location = useLocation();
