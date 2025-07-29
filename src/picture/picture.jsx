@@ -25,13 +25,43 @@ const Picture = () => {
             }, 1000);
             return () => clearTimeout(timer);
         } else if (countdown === 0 && webcamRef.current) {
-            const imageSrc = webcamRef.current.getScreenshot();
+            const screenshot = webcamRef.current.getScreenshot();
 
-            setTimeout(() => {
-                navigate('/selectPicture', { state: { image: imageSrc } });
-            }, 500);
+            if (screenshot && selectedFrame === 3) {
+                const image = new Image();
+                image.src = screenshot;
+
+                image.onload = () => {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 971;
+                    canvas.height = 486;
+                    const ctx = canvas.getContext("2d");
+
+                    // 1. Draw webcam image
+                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                    // 2. Draw frame image (kimkb.png)
+                    const frameImage = new Image();
+                    frameImage.src = '/kimkb.png';
+                    frameImage.onload = () => {
+                        ctx.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
+
+                        const finalImage = canvas.toDataURL("image/jpeg");
+
+                        // navigate with final image
+                        setTimeout(() => {
+                            navigate('/selectPicture', { state: { image: finalImage } });
+                        }, 500);
+                    };
+                };
+            } else {
+                // 프레임 3이 아닌 경우: 단순 캡쳐
+                setTimeout(() => {
+                    navigate('/selectPicture', { state: { image: screenshot } });
+                }, 500);
+            }
         }
-    }, [countdown, navigate]);
+    }, [countdown, navigate, selectedFrame]);
 
     return (
         <div className='container'>
