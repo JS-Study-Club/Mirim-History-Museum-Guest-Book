@@ -84,18 +84,14 @@ const Picture = () => {
                         height: 486
                     }}
                 />
-                {/* 프레임 이미지 오버레이 */}
-                {selectedFrame && (
+                {selectedFrame === 3 && (
                     <img
-                        src={
-                            selectedFrame === 3
-                                ? '/kimkb.png' // 프레임 3번이면 kimkb 이미지
-                                : getFrameImage(selectedFrame)
-                        }
+                        src="/kimkb.png"
                         alt="frame overlay"
                         className="frame-overlay"
                     />
                 )}
+
             </div>
             <div className="countdown">{countdown}</div>
         </div>
