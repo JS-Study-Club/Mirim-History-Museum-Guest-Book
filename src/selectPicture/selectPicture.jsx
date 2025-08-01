@@ -1,7 +1,6 @@
 import './selectPicture.css';
 import StepIndicator from '../stepIndicator/StepIndicator';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { IoChevronBackOutline } from 'react-icons/io5';
 
 const SelectPicture = () => {
 
