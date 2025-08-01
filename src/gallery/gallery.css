@@ -1,17 +1,66 @@
 .g-header {
-    margin-top: 70px;
+    margin: 53px 70px 39px 70px;
 }
 
 .header-line {
-    background: #008156;
+    margin: 0;
+    margin-top: 16px;
+    background: #666666;
     width: 1762px;
     height: 1px;
 }
 
 .header-text {
-    color: #008156;
-    text-align: center;
+    margin: 0;
+    color: #000;
+    text-align: left;
     font-family: 'Poppins';
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 500;
+}
+
+.photo-scroller {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.row {
+  display: flex;
+  width: max-content;
+}
+
+.row.left {
+  animation: scroll-left 20s linear infinite;
+}
+
+.row.right {
+  animation: scroll-right 20s linear infinite;
+}
+
+.photo {
+  width: 268px;
+  height: 276px;
+  margin-right: 16px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
