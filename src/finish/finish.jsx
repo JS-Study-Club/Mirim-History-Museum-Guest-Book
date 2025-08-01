@@ -1,4 +1,5 @@
 import './finish.css';
+import 'animate.css';
 import StepIndicator from '../stepIndicator/StepIndicator';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
