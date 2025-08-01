@@ -24,6 +24,10 @@ const Finish = () => {
 
     return(
         <div className='container'>
+            <div onClick={() => navigate('/')} className='home'>
+                <img className='homeIcon' src='/home.png' alt='홈 아이콘'></img>
+                <p className='homeText'>홈으로</p>
+            </div>
             <div className='check'>
                 <img src='/done.png' alt='완료 체크 아이콘'></img>
             </div>
