@@ -83,19 +83,14 @@ const Draw = () => {
         <div className="preview-wrap">
           <img src={image} alt="Captured" className="preview-image" />
           {frameImageSrc && (
-            <img 
-              src={frameImageSrc} 
-              alt={`frame ${selectedFrame}`} 
-              className="frame-overlay" 
-            />
+            <img src={frameImageSrc} alt="Frame" className="frame-overlay" />
           )}
           <div className="canvas-wrapper">
             <ReactSketchCanvas
               ref={canvasRef}
               strokeWidth={4}
-              strokeColor="black"
+              strokeColor='black'
               canvasColor="transparent"
-              style={{ width: '972px', height: '390px' }}
               onStroke={handleStroke}
             />
           </div>
@@ -103,6 +98,7 @@ const Draw = () => {
       ) : (
         <p>사진이 없습니다.</p>
       )}
+
 
       <div className="tools">
         <button 
