@@ -40,17 +40,7 @@ const SelectFrame = () => {
           <p className="headerKo">프레임을 선택해주세요</p>
         </div>
 
-        <div className="frame-container">
-          <Webcam
-            audio={false}
-            className="webcam"
-            videoConstraints={{ facingMode: "user" }}
-            mirrored
-          />
-          {selected === 3 && (
-            <img src="/kimkb.png" alt="kimkb frame" className="frame-overlay" />
-          )}
-        </div>
+        <div className="frame-preview"></div>
 
 
         <div className="frames">
