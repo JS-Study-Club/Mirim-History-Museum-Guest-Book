@@ -39,6 +39,14 @@ const Gallery = () => {
                 </div>
             ))}
             </div>
+            <div className='g-bottom'>
+                <div className='bottom-text'>
+                    <p className='bottom-text1'>#Mirim History</p>
+                    <p className='bottom-text2'>#Memories</p>
+                    <p className='bottom-text3'>#Gallery</p>
+                </div>
+                <p className='bottom-title'>Photos</p>
+            </div>
         </div>
 
     );

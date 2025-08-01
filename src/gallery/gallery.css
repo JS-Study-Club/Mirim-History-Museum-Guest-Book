@@ -39,6 +39,7 @@
 
 .row.right {
   animation: scroll-right 20s linear infinite;
+  margin-bottom: 80px;
 }
 
 .photo {
@@ -63,4 +64,36 @@
   100% {
     transform: translateX(50%);
   }
+}
+
+.g-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.bottom-text {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bottom-text1, .bottom-text2, .bottom-text3 {
+    margin: 0;
+    color: #555555;
+    text-align: left;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bottom-title {
+    margin: 0;
+    margin-right: 60px;
+    color: #000;
+    text-align: right;
+    font-family: "Prata", serif;
+    font-size: 160px;
 }
