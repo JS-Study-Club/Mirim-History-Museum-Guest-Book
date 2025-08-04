@@ -42,10 +42,20 @@
   margin-bottom: 80px;
 }
 
+.row.paused {
+    animation-play-state: paused;
+}
+
 .photo {
   width: 268px;
   height: 276px;
   margin-right: 16px;
+  transition: width 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), height 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.photo.enlarged {
+  width: 366px !important;
+  height: 378px !important;
 }
 
 @keyframes scroll-left {
@@ -59,17 +69,17 @@
 
 @keyframes scroll-right {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(0%);
   }
 }
 
 .g-bottom {
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -91,6 +101,7 @@
 
 .bottom-title {
     margin: 0;
+    top: 30px;
     margin-right: 60px;
     color: #000;
     text-align: right;
