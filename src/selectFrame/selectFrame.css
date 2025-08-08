@@ -33,19 +33,16 @@
 }
 
 .frame-preview {
-    position: relative;
     width: 971px;
     height: 486px;
-    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 100px;
 }
-
-.webcam {
+.preview-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    display: block;
 }
 
 .frame-overlay {
