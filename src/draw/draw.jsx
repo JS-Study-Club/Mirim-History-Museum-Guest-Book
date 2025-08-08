@@ -77,38 +77,32 @@ const Draw = () => {
 
   // 모든 레이어를 합성하는 함수
   const combineAllLayers = async () => {
-    try {
-      // 캔버스 생성
-      const combinedCanvas = document.createElement('canvas');
-      const ctx = combinedCanvas.getContext('2d');
-      
-      // 원본 이미지의 크기를 기준으로 캔버스 크기 설정
-      const photoImg = await loadImage(image);
-      combinedCanvas.width = photoImg.width;
-      combinedCanvas.height = photoImg.height;
+    const combinedCanvas = document.createElement('canvas');
+    const ctx = combinedCanvas.getContext('2d');
+    combinedCanvas.width = 971;
+    combinedCanvas.height = 1002;
 
-      // 1. 배경 사진 그리기
-      ctx.drawImage(photoImg, 0, 0, combinedCanvas.width, combinedCanvas.height);
+    // 1. 사진
+    const photoImg = await loadImage(image);
+    ctx.drawImage(photoImg, 0, 0, 945, 490);
 
-      // 2. 프레임 그리기 (선택된 경우)
-      if (frameImageSrc) {
-        const frameImg = await loadImage(frameImageSrc);
-        ctx.drawImage(frameImg, 0, 0, combinedCanvas.width, combinedCanvas.height);
-      }
-
-      // 3. 그림 그리기 (ReactSketchCanvas에서 export)
-      const drawingDataUrl = await canvasRef.current?.exportImage('png');
-      if (drawingDataUrl) {
-        const drawingImg = await loadImage(drawingDataUrl);
-        ctx.drawImage(drawingImg, 0, 0, combinedCanvas.width, combinedCanvas.height);
-      }
-
-      // 합성된 이미지를 DataURL로 변환
-      return combinedCanvas.toDataURL('image/png');
-    } catch (error) {
-      console.error('이미지 합성 중 오류 발생:', error);
-      throw error;
+    // 2. 프레임
+    if (frameImageSrc) {
+      const frameImg = await loadImage(frameImageSrc);
+      ctx.drawImage(frameImg, 0, 0, 971, 1002);
     }
+
+    // 3. 그림 (아래쪽에만)
+    const drawingDataUrl = await canvasRef.current?.exportImage('png', {
+      width: 971,
+      height: 456
+    });
+    if (drawingDataUrl) {
+      const drawingImg = await loadImage(drawingDataUrl);
+      ctx.drawImage(drawingImg, 0, 546, 912, 456);
+    }
+
+    return combinedCanvas.toDataURL('image/png');
   };
 
   // 백엔드에 이미지 업로드
@@ -197,10 +191,6 @@ const Draw = () => {
 
       {image ? (
         <div className="preview-wrap">
-          <img src={image} alt="Captured" className="preview-image" />
-          {frameImageSrc && (
-            <img src={frameImageSrc} alt="Frame" className="frame-overlay" />
-          )}
           <div className="canvas-wrapper">
             <ReactSketchCanvas
               ref={canvasRef}
@@ -210,6 +200,10 @@ const Draw = () => {
               onStroke={handleStroke}
             />
           </div>
+          <img src={image} alt="Captured" className="preview-image" />
+          {frameImageSrc && (
+            <img src={frameImageSrc} alt="Frame" className="frame-overlay" />
+          )}
         </div>
       ) : (
         <p>사진이 없습니다.</p>
