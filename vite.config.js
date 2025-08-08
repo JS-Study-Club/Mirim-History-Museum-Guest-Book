@@ -8,7 +8,7 @@ export default defineConfig({
     include: ['react', 'react-dom']
   },
   server: {
-    port: 3000,
+    port: 3001,
     force: true
   },
   clearScreen: false
