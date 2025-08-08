@@ -1,31 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* 좌우 스크롤 방지 */
+  overflow-y: hidden; /* 상하(세로) 스크롤 방지 */
+}
+.g-container {
+  background-image: url('galleryBg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 77px; /* 헤더만 내리기, 배경은 위에서부터 채움 */
+}
+
 .g-header {
-    margin: 53px 70px 39px 70px;
+  margin: 0px 112px 82px 112px;
 }
 
 .header-line {
-    margin: 0;
-    margin-top: 16px;
-    background: #666666;
-    width: 1762px;
-    height: 1px;
+  margin: 0;
+  margin-top: 26px;
+  background: #CCCCCC;
+  width: 3380px;
+  height: 1.5px;
+  float: center;
 }
 
 .header-text {
-    margin: 0;
-    color: #000;
-    text-align: left;
-    font-family: 'Poppins';
-    font-size: 30px;
-    font-weight: 500;
+  margin: 0;
+  color: #555;
+  text-align: left;
+  font-family: 'Poppins';
+  font-size: 46px;
+  font-weight: 500;
 }
 
 .photo-scroller {
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 160px;
   overflow: hidden;
   width: 100%;
-  height: auto;
 }
 
 .row {
@@ -43,19 +59,19 @@
 }
 
 .row.paused {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .photo {
-  width: 268px;
-  height: 276px;
-  margin-right: 16px;
+  width: 500px;
+  height: 515px;
+  margin-right: 25px;
   transition: width 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), height 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .photo.enlarged {
-  width: 366px !important;
-  height: 378px !important;
+  width: 600px !important;
+  height: 619px !important;
 }
 
 @keyframes scroll-left {
@@ -77,34 +93,36 @@
 }
 
 .g-bottom {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end; /* 세로 아래 정렬 */
 }
 
 .bottom-text {
-    margin-left: 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  margin-left: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .bottom-text1, .bottom-text2, .bottom-text3 {
-    margin: 0;
-    color: #555555;
-    text-align: left;
-    font-family: 'Poppins';
-    font-size: 20px;
-    font-weight: 500;
+  margin: 0;
+  color: #555555;
+  text-align: left;
+  font-family: 'Poppins';
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .bottom-title {
-    margin: 0;
-    top: 30px;
-    margin-right: 60px;
-    color: #000;
-    text-align: right;
-    font-family: "Prata", serif;
-    font-size: 160px;
+  margin: 0;
+  margin-right: 100px;
+  color: #000;
+  text-align: right;
+  font-family: "Prata", serif;
+  font-size: 247px;
+  align-self: flex-end;
+  transform: translateY(80px); /* 원하는 만큼 숫자 조절 */
 }
