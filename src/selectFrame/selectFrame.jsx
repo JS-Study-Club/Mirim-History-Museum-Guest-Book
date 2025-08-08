@@ -40,7 +40,15 @@ const SelectFrame = () => {
           <p className="headerKo">프레임을 선택해주세요</p>
         </div>
 
-        <div className="frame-preview"></div>
+        <div className="frame-preview">
+          {selected && (
+            <img
+              src={`/previewThumbnail${selected}.png`}
+              alt={`preview ${selected}`}
+              className="preview-img"
+            />
+          )}
+        </div>
 
 
         <div className="frames">
