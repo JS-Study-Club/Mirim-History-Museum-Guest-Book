@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-animation:scale-up-center .8s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-center .8s cubic-bezier(.39,.575,.565,1.000) both
+    animation: scale-up-center 0.4s cubic-bezier(.39,.575,.565,1.000) forwards;
 }
 
 .checkIcon {
@@ -84,4 +84,19 @@
     font-weight: 400;
     color: #888;
     margin-bottom: 177px;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
